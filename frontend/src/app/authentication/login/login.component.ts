@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
       const password = this.login.get('password')!.value;
       this.userService.login(username, password).subscribe({
         next: (res) => {
-          console.log(res)
           localStorage.setItem('isLoggedIn', 'true')
           this.snackbar.open(`${username} is Logged in`, 'Close', { duration: 3000 })
           this.router.navigate(['/main'])
