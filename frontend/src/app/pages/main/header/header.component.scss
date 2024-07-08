@@ -1,0 +1,19 @@
+@import '/src/assets/scss/variables.scss';
+
+.custom-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $normal_bg;
+    color: $normal_text;
+
+    .example-spacer {
+        flex: 1 1 auto;
+    }
+
+    .toolbar-link {
+        text-decoration: none;
+        color: $normal_text;
+        margin: 0 10px;
+    }
+}

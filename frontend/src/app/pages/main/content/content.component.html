@@ -1,0 +1,11 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened class="text-center fs-5 p-4">
+        <a [routerLink]="['/main']" class="toolbar-link">Dashboard</a>
+        <a [routerLink]="['/main/events']" class="toolbar-link">Events</a>
+        <a [routerLink]="['/main/profile']" class="toolbar-link">Profile</a>
+        <a (click)="logout()">Logout</a>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,9 @@
+<mat-toolbar class="custom-toolbar">
+    <span class="fs-1 text-primary">E<span class="text-dark">MS</span></span>
+    <span class="example-spacer m-3">
+        <a [routerLink]="['/main']" class="toolbar-link">Dashboard</a>
+        <a [routerLink]="['/main/events']" class="toolbar-link">Events</a>
+    </span>
+    <button mat-raised-button class="btn btn-primary mx-3" color="primary" (click)="profile()">Profile</button>
+    <button mat-raised-button class="btn btn-primary" (click)="logout()">Logout</button>
+</mat-toolbar>

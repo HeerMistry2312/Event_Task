@@ -1,0 +1,29 @@
+@import '/src/assets/scss/variables.scss';
+
+.example-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+
+    .mat-drawer {
+        width: 250px;
+        background-color: $normal_bg;
+
+        a {
+            display: block;
+            padding: 10px;
+            color: $normal_text;
+            text-decoration: none;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #555;
+            }
+        }
+    }
+
+    .mat-drawer-content {
+        width: 100%;
+        padding: 20px 20px;
+    }
+}

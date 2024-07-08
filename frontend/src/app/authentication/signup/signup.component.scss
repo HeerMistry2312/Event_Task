@@ -1,0 +1,12 @@
+@import '/src/assets/scss/variables.scss';
+
+small {
+    color: $error_text;
+}
+.container-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}

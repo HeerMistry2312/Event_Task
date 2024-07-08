@@ -1,0 +1,30 @@
+<div class="wrapper d-flex flex-column h-100" *ngIf="user">
+    <div class="row flex-grow-0">
+        <div class="col-lg-6 text-center">
+            <mat-card appearance="outlined" class="bg-light">
+                <mat-card-content>
+                    <h1><span class="text-primary">Welcome!</span> {{user.username| uppercase}}</h1>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-lg-6 text-center">
+            <mat-card appearance="outlined" class="bg-light">
+                <mat-card-content>
+                    <h1><span class="text-primary">EMail:</span> {{user.email}}</h1>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row flex-grow-1 mt-4">
+        <div class="col-lg-12 text-center h-100">
+            <mat-card appearance="outlined" class="bg-light h-100 d-flex flex-column">
+                <mat-card-content class="flex-grow-1">
+                    <h1><span class="text-primary m-2">Events List</span></h1>
+                    <app-event-table></app-event-table>
+                    <button mat-raised-button class="btn btn-primary mt-3" color="primary" (click)="viewAll()">View
+                        All</button>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

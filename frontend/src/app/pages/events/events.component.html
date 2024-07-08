@@ -1,0 +1,46 @@
+<div class="wrapper d-flex flex-column h-100">
+    <div class="row flex-grow-1">
+        <div class="col-lg-12 text-center h-100">
+            <mat-card appearance="outlined" class="bg-light h-100 d-flex flex-column">
+                <mat-card-content class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                        <h1><span class="text-dark fs-1 m-2">Events List</span></h1>
+                        <button mat-raised-button class="btn btn-primary" (click)="openEventForm()">Add Event</button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4" *ngFor="let event of events">
+                            <mat-card appearance="outlined" class="bg-light mb-4 p-2">
+                                <mat-card-title class="fs-2 text-primary fw-bold">{{event.title}}</mat-card-title>
+                                <mat-card-content>
+                                    <br>
+                                    <p>{{event.description}}</p>
+                                    <p><b>Organized By:</b> <span>{{event.organizer}}</span></p>
+                                    <p><b>Date:</b> <span>{{event.date | date}}</span></p>
+                                    <p><b>Location:</b> <span>{{event.location}}</span></p>
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-outline-primary mx-2" (click)="view(event._id)">
+                                            View
+                                        </button>
+                                        <button *ngIf="user?.username === event.organizer" class="btn btn-primary mx-2"
+                                            [disabled]="isPast(event.date)" (click)="onupdate(event._id)">
+                                            Update
+                                        </button>
+                                        <button *ngIf="user?.username === event.organizer"
+                                            class="btn btn-outline-danger mx-2" (click)="onDelete(event._id)">
+                                            Delete
+                                        </button>
+                                        <button *ngIf="user?.username !== event.organizer" class="btn btn-primary mx-2"
+                                            [disabled]="isPast(event.date)" (click)="onRegister(event._id)">
+                                            Register
+                                        </button>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
